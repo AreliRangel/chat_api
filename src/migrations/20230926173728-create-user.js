@@ -39,7 +39,7 @@ module.exports = {
       },
       validEmail: {
         type: Sequelize.BOOLEAN,
-        defaultValue: false,
+        defaultValue: true,
       },
       createdAt: {
         allowNull: false,
