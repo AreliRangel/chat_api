@@ -1,0 +1,76 @@
+========================ERROR 5/10/2023, 1:11:30 p. m.===========================
+req: DELETE /api/v1/conversations/18 body: {} 
+res: status: undefined, {"name":"SequelizeForeignKeyConstraintError","parent":{"length":305,"name":"error","severity":"ERROR","code":"23503","detail":"La llave (id)=(18) todavía es referida desde la tabla «Messages».","schema":"public","table":"Messages","constraint":"Messages_conversationId_fkey","file":"ri_triggers.c","line":"2621","routine":"ri_ReportViolation","sql":"DELETE FROM \"Conversations\" WHERE \"id\" = '18'"},"original":{"length":305,"name":"error","severity":"ERROR","code":"23503","detail":"La llave (id)=(18) todavía es referida desde la tabla «Messages».","schema":"public","table":"Messages","constraint":"Messages_conversationId_fkey","file":"ri_triggers.c","line":"2621","routine":"ri_ReportViolation","sql":"DELETE FROM \"Conversations\" WHERE \"id\" = '18'"},"sql":"DELETE FROM \"Conversations\" WHERE \"id\" = '18'","parameters":{},"fields":null}
+
+========================ERROR 5/10/2023, 1:15:40 p. m.===========================
+req: POST /api/v1/conversations body: {"userId":1,"participantId":4} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-05T15:56:01.000Z"}
+
+========================ERROR 5/10/2023, 1:17:36 p. m.===========================
+req: DELETE /api/v1/conversations/18 body: {} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":196,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Messages.conversationId».","position":"30","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"DELETE FROM \"Messages\" WHERE \"ConversationId\" = '18'"},"original":{"length":196,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Messages.conversationId».","position":"30","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"DELETE FROM \"Messages\" WHERE \"ConversationId\" = '18'"},"sql":"DELETE FROM \"Messages\" WHERE \"ConversationId\" = '18'","parameters":{}}
+
+========================ERROR 5/10/2023, 1:17:42 p. m.===========================
+req: DELETE /api/v1/conversations/19 body: {} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":196,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Messages.conversationId».","position":"30","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"DELETE FROM \"Messages\" WHERE \"ConversationId\" = '19'"},"original":{"length":196,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Messages.conversationId».","position":"30","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"DELETE FROM \"Messages\" WHERE \"ConversationId\" = '19'"},"sql":"DELETE FROM \"Messages\" WHERE \"ConversationId\" = '19'","parameters":{}}
+
+========================ERROR 5/10/2023, 1:19:45 p. m.===========================
+req: DELETE /api/v1/conversations/80 body: {} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":196,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Messages.conversationId».","position":"30","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"DELETE FROM \"Messages\" WHERE \"ConversationId\" = '80'"},"original":{"length":196,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Messages.conversationId».","position":"30","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"DELETE FROM \"Messages\" WHERE \"ConversationId\" = '80'"},"sql":"DELETE FROM \"Messages\" WHERE \"ConversationId\" = '80'","parameters":{}}
+
+========================ERROR 5/10/2023, 1:19:52 p. m.===========================
+req: DELETE /api/v1/conversations/19 body: {} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":196,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Messages.conversationId».","position":"30","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"DELETE FROM \"Messages\" WHERE \"ConversationId\" = '19'"},"original":{"length":196,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Messages.conversationId».","position":"30","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"DELETE FROM \"Messages\" WHERE \"ConversationId\" = '19'"},"sql":"DELETE FROM \"Messages\" WHERE \"ConversationId\" = '19'","parameters":{}}
+
+========================ERROR 5/10/2023, 1:23:25 p. m.===========================
+req: POST /api/v1/messages/conversation/19 body: {"content":"hola ","sendenrId":4} 
+res: status: undefined, {"name":"SequelizeForeignKeyConstraintError","parent":{"length":307,"name":"error","severity":"ERROR","code":"23503","detail":"La llave (conversationId)=(19) no está presente en la tabla «Conversations».","schema":"public","table":"Messages","constraint":"Messages_conversationId_fkey","file":"ri_triggers.c","line":"2607","routine":"ri_ReportViolation","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"sendenrId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"sendenrId\",\"conversationId\",\"createdAt\";","parameters":["hola ",4,"19","2023-10-05 18:23:25.983 +00:00"]},"original":{"length":307,"name":"error","severity":"ERROR","code":"23503","detail":"La llave (conversationId)=(19) no está presente en la tabla «Conversations».","schema":"public","table":"Messages","constraint":"Messages_conversationId_fkey","file":"ri_triggers.c","line":"2607","routine":"ri_ReportViolation","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"sendenrId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"sendenrId\",\"conversationId\",\"createdAt\";","parameters":["hola ",4,"19","2023-10-05 18:23:25.983 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"sendenrId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"sendenrId\",\"conversationId\",\"createdAt\";","parameters":["hola ",4,"19","2023-10-05 18:23:25.983 +00:00"],"fields":null}
+
+========================ERROR 5/10/2023, 1:23:34 p. m.===========================
+req: POST /api/v1/messages/conversation/19 body: {"content":"hola ","sendenrId":1} 
+res: status: undefined, {"name":"SequelizeForeignKeyConstraintError","parent":{"length":307,"name":"error","severity":"ERROR","code":"23503","detail":"La llave (conversationId)=(19) no está presente en la tabla «Conversations».","schema":"public","table":"Messages","constraint":"Messages_conversationId_fkey","file":"ri_triggers.c","line":"2607","routine":"ri_ReportViolation","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"sendenrId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"sendenrId\",\"conversationId\",\"createdAt\";","parameters":["hola ",1,"19","2023-10-05 18:23:34.069 +00:00"]},"original":{"length":307,"name":"error","severity":"ERROR","code":"23503","detail":"La llave (conversationId)=(19) no está presente en la tabla «Conversations».","schema":"public","table":"Messages","constraint":"Messages_conversationId_fkey","file":"ri_triggers.c","line":"2607","routine":"ri_ReportViolation","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"sendenrId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"sendenrId\",\"conversationId\",\"createdAt\";","parameters":["hola ",1,"19","2023-10-05 18:23:34.069 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"sendenrId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"sendenrId\",\"conversationId\",\"createdAt\";","parameters":["hola ",1,"19","2023-10-05 18:23:34.069 +00:00"],"fields":null}
+
+========================ERROR 5/10/2023, 1:27:30 p. m.===========================
+req: DELETE /api/v1/conversations/80 body: {} 
+res: status: undefined, {}
+
+========================ERROR 5/10/2023, 1:35:56 p. m.===========================
+req: DELETE /api/v1/conversations/20 body: {} 
+res: status: undefined, {}
+
+========================ERROR 5/10/2023, 1:38:44 p. m.===========================
+req: DELETE /api/v1/conversations/890 body: {} 
+res: status: undefined, {}
+
+========================ERROR 5/10/2023, 1:39:21 p. m.===========================
+req: DELETE /api/v1/conversations/890 body: {} 
+res: status: undefined, {}
+
+========================ERROR 5/10/2023, 1:40:27 p. m.===========================
+req: DELETE /api/v1/conversations/890 body: {} 
+res: status: undefined, {"name":"SequelizeQueryError"}
+
+========================ERROR 5/10/2023, 1:40:38 p. m.===========================
+req: DELETE /api/v1/conversations/890 body: {} 
+res: status: undefined, {"name":"SequelizeQueryError"}
+
+========================ERROR 5/10/2023, 1:41:56 p. m.===========================
+req: DELETE /api/v1/conversations/890 body: {} 
+res: status: undefined, {}
+
+========================ERROR 5/10/2023, 1:42:41 p. m.===========================
+req: DELETE /api/v1/conversations/890 body: {} 
+res: status: undefined, {}
+
+========================ERROR 5/10/2023, 1:42:59 p. m.===========================
+req: DELETE /api/v1/conversations/890 body: {} 
+res: status: undefined, {}
+
+========================ERROR 5/10/2023, 5:33:21 p. m.===========================
+req: DELETE /api/v1/conversations/20 body: {} 
+res: status: undefined, {"name":"SequelizeForeignKeyConstraintError","parent":{"length":305,"name":"error","severity":"ERROR","code":"23503","detail":"La llave (id)=(20) todavía es referida desde la tabla «Messages».","schema":"public","table":"Messages","constraint":"Messages_conversationId_fkey","file":"ri_triggers.c","line":"2621","routine":"ri_ReportViolation","sql":"DELETE FROM \"Conversations\" WHERE \"id\" = '20'"},"original":{"length":305,"name":"error","severity":"ERROR","code":"23503","detail":"La llave (id)=(20) todavía es referida desde la tabla «Messages».","schema":"public","table":"Messages","constraint":"Messages_conversationId_fkey","file":"ri_triggers.c","line":"2621","routine":"ri_ReportViolation","sql":"DELETE FROM \"Conversations\" WHERE \"id\" = '20'"},"sql":"DELETE FROM \"Conversations\" WHERE \"id\" = '20'","parameters":{},"fields":null}
+
+========================ERROR 5/10/2023, 5:41:13 p. m.===========================
+req: POST /api/v1/messages/conversation/15 body: {"content":"hola a todos ","sendenrId":1} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-05T18:58:29.000Z"}
+
